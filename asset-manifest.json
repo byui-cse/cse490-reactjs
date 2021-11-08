@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "https://byui-cse.github.io/cse490-reactjs/static/css/main.8def1795.chunk.css",
-    "main.js": "https://byui-cse.github.io/cse490-reactjs/static/js/main.a6bd7c3e.chunk.js",
-    "main.js.map": "https://byui-cse.github.io/cse490-reactjs/static/js/main.a6bd7c3e.chunk.js.map",
-    "runtime-main.js": "https://byui-cse.github.io/cse490-reactjs/static/js/runtime-main.47e67a51.js",
-    "runtime-main.js.map": "https://byui-cse.github.io/cse490-reactjs/static/js/runtime-main.47e67a51.js.map",
-    "static/css/2.68a81a89.chunk.css": "https://byui-cse.github.io/cse490-reactjs/static/css/2.68a81a89.chunk.css",
-    "static/js/2.5e6fd18d.chunk.js": "https://byui-cse.github.io/cse490-reactjs/static/js/2.5e6fd18d.chunk.js",
-    "static/js/2.5e6fd18d.chunk.js.map": "https://byui-cse.github.io/cse490-reactjs/static/js/2.5e6fd18d.chunk.js.map",
-    "index.html": "https://byui-cse.github.io/cse490-reactjs/index.html",
-    "precache-manifest.24d520364cff6a35eb98a33ed1c91e96.js": "https://byui-cse.github.io/cse490-reactjs/precache-manifest.24d520364cff6a35eb98a33ed1c91e96.js",
-    "service-worker.js": "https://byui-cse.github.io/cse490-reactjs/service-worker.js",
-    "static/css/2.68a81a89.chunk.css.map": "https://byui-cse.github.io/cse490-reactjs/static/css/2.68a81a89.chunk.css.map",
-    "static/css/main.8def1795.chunk.css.map": "https://byui-cse.github.io/cse490-reactjs/static/css/main.8def1795.chunk.css.map"
+    "main.css": "/cse490-reactjs/static/css/main.8def1795.chunk.css",
+    "main.js": "/cse490-reactjs/static/js/main.04c92c29.chunk.js",
+    "main.js.map": "/cse490-reactjs/static/js/main.04c92c29.chunk.js.map",
+    "runtime-main.js": "/cse490-reactjs/static/js/runtime-main.659ffad8.js",
+    "runtime-main.js.map": "/cse490-reactjs/static/js/runtime-main.659ffad8.js.map",
+    "static/css/2.68a81a89.chunk.css": "/cse490-reactjs/static/css/2.68a81a89.chunk.css",
+    "static/js/2.b1720b73.chunk.js": "/cse490-reactjs/static/js/2.b1720b73.chunk.js",
+    "static/js/2.b1720b73.chunk.js.map": "/cse490-reactjs/static/js/2.b1720b73.chunk.js.map",
+    "index.html": "/cse490-reactjs/index.html",
+    "precache-manifest.6a5f872c132e540d76a6cfb2f7c8078f.js": "/cse490-reactjs/precache-manifest.6a5f872c132e540d76a6cfb2f7c8078f.js",
+    "service-worker.js": "/cse490-reactjs/service-worker.js",
+    "static/css/2.68a81a89.chunk.css.map": "/cse490-reactjs/static/css/2.68a81a89.chunk.css.map",
+    "static/css/main.8def1795.chunk.css.map": "/cse490-reactjs/static/css/main.8def1795.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.47e67a51.js",
+    "static/js/runtime-main.659ffad8.js",
     "static/css/2.68a81a89.chunk.css",
-    "static/js/2.5e6fd18d.chunk.js",
+    "static/js/2.b1720b73.chunk.js",
     "static/css/main.8def1795.chunk.css",
-    "static/js/main.a6bd7c3e.chunk.js"
+    "static/js/main.04c92c29.chunk.js"
   ]
 }
