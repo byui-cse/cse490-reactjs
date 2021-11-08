@@ -7,63 +7,67 @@ import { Lessons } from '../util/courseSwapper';
 import Lesson from '../pages/lesson';
 
 export default function Nav() {
+  const ghURL = '/cse490-reactjs';
   return (
     <Router>
       <Switch>
-        <Route path='/syllabus' component={Syllabus} />
         <Route
-          path='/lesson1'
+          path={process.env.PUBLIC_URL + '/syllabus'}
+          component={Syllabus}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + '/lesson1'}
           render={(props) => <Lesson lesson={Lessons[0]} num={1} />}
         />
         <Route
-          path='/lesson2'
+          path={process.env.PUBLIC_URL + '/lesson2'}
           render={(props) => <Lesson lesson={Lessons[1]} num={2} />}
         />
         <Route
-          path='/lesson3'
+          path={process.env.PUBLIC_URL + '/lesson3'}
           render={(props) => <Lesson lesson={Lessons[2]} num={3} />}
         />
         <Route
-          path='/lesson4'
+          path={process.env.PUBLIC_URL + '/lesson4'}
           render={(props) => <Lesson lesson={Lessons[3]} num={4} />}
         />
         <Route
-          path='/lesson5'
+          path={process.env.PUBLIC_URL + '/lesson5'}
           render={(props) => <Lesson lesson={Lessons[4]} num={5} />}
         />
         <Route
-          path='/lesson6'
+          path={process.env.PUBLIC_URL + '/lesson6'}
           render={(props) => <Lesson lesson={Lessons[5]} num={6} />}
         />
         <Route
-          path='/lesson7'
+          path={process.env.PUBLIC_URL + '/lesson7'}
           render={(props) => <Lesson lesson={Lessons[6]} num={7} />}
         />
         <Route
-          path='/lesson8'
+          path={process.env.PUBLIC_URL + '/lesson8'}
           render={(props) => <Lesson lesson={Lessons[7]} num={8} />}
         />
         <Route
-          path='/lesson9'
+          path={process.env.PUBLIC_URL + '/lesson9'}
           render={(props) => <Lesson lesson={Lessons[8]} num={9} />}
         />
         <Route
-          path='/lesson10'
+          path={process.env.PUBLIC_URL + '/lesson10'}
           render={(props) => <Lesson lesson={Lessons[9]} num={10} />}
         />
         <Route
-          path='/lesson11'
+          path={process.env.PUBLIC_URL + '/lesson11'}
           render={(props) => <Lesson lesson={Lessons[10]} num={11} />}
         />
         <Route
-          path='/lesson12'
+          path={process.env.PUBLIC_URL + '/lesson12'}
           render={(props) => <Lesson lesson={Lessons[11]} num={12} />}
         />
         <Route
-          path='/lesson13'
+          path={process.env.PUBLIC_URL + '/lesson13'}
           render={(props) => <Lesson lesson={Lessons[12]} num={13} />}
         />
-        <Route path='/' component={Home} />
+        <Route path={process.env.PUBLIC_URL + '/'} component={Home} />
       </Switch>
     </Router>
   );
