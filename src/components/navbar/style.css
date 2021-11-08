@@ -1,0 +1,12 @@
+.my-nav {
+  background-color: #326ba9;
+}
+
+.my-item {
+  color: #ffffff !important;
+}
+
+.my-item:after,
+.dropdown-toggle:after {
+  display: none !important;
+}
