@@ -7,7 +7,7 @@
 
 const ReactCompleteGuide = {
   id: 2,
-  name: 'Special Topics: React Development',
+  name: 'Special Topics: React',
   code: 'CSE 490R',
   homeVideo: 'https://www.youtube.com/embed/N40chXDxcIk',
 };

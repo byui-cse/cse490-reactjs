@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/navbar/index';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Readings from '../components/readings';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -25,23 +25,23 @@ function Lesson(props) {
     <>
       <Navbar />
       <Container className='pt-4 pb-4'>
-        <div className='row'>
-          <div className='col-md-1'>
+        <Row xs={12}>
+          <Col xs={1}>
             <LinkContainer to={prev}>
               <BiLeftArrowAlt className='display-6' />
             </LinkContainer>
-          </div>
-          <div className='col-md-10'>
+          </Col>
+          <Col xs={10}>
             <h1>{l.title}</h1>
-          </div>
-          <div className='col-md-1'>
+          </Col>
+          <Col xs={1}>
             {props.num < 13 && (
               <LinkContainer to={next}>
-                <BiRightArrowAlt className='display-6' />
+                <BiRightArrowAlt className='display-6 negativeMarginLeft' />
               </LinkContainer>
             )}
-          </div>
-        </div>
+          </Col>
+        </Row>
         <h2>
           <RiLandscapeFill /> &nbsp; Overview
         </h2>

@@ -454,6 +454,14 @@ span.subtitle {
 li heading {
   font-weight: bold;
 }
+.negativeMarginLeft {
+  float: right;
+}
+@media screen and (max-width: 768px) {
+  .negativeMarginLeft {
+    margin-left: -20px;
+  }
+}
 
 /* styles for 341 from birch */
 .evenlySpaced td {

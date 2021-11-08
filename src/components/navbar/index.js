@@ -22,8 +22,13 @@ function SiteNav() {
           <Nav
             className=' me-auto justify-content-end'
             style={{ width: '100%' }}>
-            <LinkContainer to={'/syllabus'}>
+            <LinkContainer to={'/home'}>
               <Nav.Link href='#home' className='my-item'>
+                Home
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to={'/syllabus'}>
+              <Nav.Link href='#syllabus' className='my-item'>
                 Syllabus
               </Nav.Link>
             </LinkContainer>
