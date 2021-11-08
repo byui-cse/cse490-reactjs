@@ -9,7 +9,7 @@ const ReactCompleteGuide = {
   id: 2,
   name: 'Special Topics: React Development',
   code: 'CSE 490R',
-  homeVideo: 'https://www.youtube.com/embed/Tn6-PIqc4UM',
+  homeVideo: 'https://www.youtube.com/embed/N40chXDxcIk',
 };
 
 export default ReactCompleteGuide;
