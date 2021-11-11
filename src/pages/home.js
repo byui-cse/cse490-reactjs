@@ -47,22 +47,24 @@ function App() {
                 </Accordion.Header>
                 <Accordion.Body>
                   <LinkContainer to={key.link} key={key.title}>
-                    <p className='link-primary'>
-                      <FiExternalLink /> Lesson Content
-                    </p>
+                    <div className='huge-link'>
+                      <p className='link-primary'>
+                        <FiExternalLink /> Lesson Content
+                      </p>
+                      <h4>Lesson Topics:</h4>
+                      <ul>
+                        {key.topics.map((topic, tIndex) => {
+                          return (
+                            <div className='topic' key={Math.random()}>
+                              <li>
+                                <p>{topic}</p>
+                              </li>
+                            </div>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   </LinkContainer>
-                  <h4>Lesson Topics:</h4>
-                  <ul>
-                    {key.topics.map((topic, tIndex) => {
-                      return (
-                        <div className='topic' key={Math.random()}>
-                          <li>
-                            <p>{topic}</p>
-                          </li>
-                        </div>
-                      );
-                    })}
-                  </ul>
                 </Accordion.Body>
               </Accordion.Item>
             );

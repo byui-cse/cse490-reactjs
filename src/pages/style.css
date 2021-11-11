@@ -444,7 +444,11 @@ heading.subtitle {
 span.subtitle {
   font-weight: bold;
 }
-
+.huge-link {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .img-center {
   display: block;
   margin-left: auto;

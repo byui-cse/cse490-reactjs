@@ -44,6 +44,18 @@ function Syllabus() {
           <p>Have multiple React projects to add to professional portfolio</p>
         </li>
       </ul>
+      <h4>Course Communication</h4>
+      <p>
+        All course communications will take place through
+        <a
+          href='https://www.microsoft.com/en-us/microsoft-teams/download-app'
+          target='_blank'>
+          Microsoft Teams
+        </a>
+        . Please join our class team using the link in I-learn, and be sure to
+        download the desktop and mobile applications to stay connected to our
+        course group.
+      </p>
       <h4>Course Schedule</h4>
       <ul>
         <li>
