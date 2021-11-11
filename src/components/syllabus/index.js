@@ -49,7 +49,8 @@ function Syllabus() {
         All course communications will take place through
         <a
           href='https://www.microsoft.com/en-us/microsoft-teams/download-app'
-          target='_blank'>
+          target='_blank'
+          rel='noopener noreferrer'>
           Microsoft Teams
         </a>
         . Please join our class team using the link in I-learn, and be sure to
