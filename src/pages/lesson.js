@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/navbar/index';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import Readings from '../components/readings';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -21,6 +22,10 @@ function Lesson(props) {
   if (props.num < 13) {
     next = '/lesson' + (props.num + 1);
   }
+  const { id } = useParams();
+  const teamAssignment = 'team';
+  const personalAssignment = 'personal';
+  const reading = 'reading';
   return (
     <>
       <Navbar />
@@ -42,12 +47,16 @@ function Lesson(props) {
             )}
           </Col>
         </Row>
-        <h2>
-          <RiLandscapeFill /> &nbsp; Overview
-        </h2>
-        <p>{l.overview}</p>
-        <Readings readings={l.readings} />
-        {l.teamAssignment && (
+        {!id && (
+          <>
+            <h2>
+              <RiLandscapeFill /> &nbsp; Overview
+            </h2>
+            <p>{l.overview}</p>
+          </>
+        )}
+        {(id === reading || !id) && <Readings readings={l.readings} />}
+        {(id === teamAssignment || !id) && l.teamAssignment && (
           <>
             <h2>
               <HiUserGroup /> &nbsp; Team Assignment
@@ -55,13 +64,18 @@ function Lesson(props) {
             <p>{l.teamAssignment}</p>
           </>
         )}
-        {l.assignment && (
+        {(id === personalAssignment || !id) && l.assignment && (
           <>
             <h2>
               <GiStrongMan /> Personal Assignment
             </h2>
             <p>{l.assignment}</p>
           </>
+        )}
+        {id && (
+          <LinkContainer to={'/lesson' + props.num}>
+            <button className='btn btn-primary'>Go to lesson page</button>
+          </LinkContainer>
         )}
       </Container>
     </>
