@@ -33,6 +33,7 @@ function Syllabus() {
           Once you've purchased it, you can always access the course{' '}
           <a
             href='https://pro.academind.com/courses/enrolled/1366761'
+            rel='noopener noreferrer'
             target='_blank'>
             here
           </a>
