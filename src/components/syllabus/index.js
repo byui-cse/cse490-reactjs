@@ -17,16 +17,27 @@ function Syllabus() {
         with a JavaScript framework, e.g. WDD 430.
       </p>
       <div className='alert alert-primary'>
-        This course will dive deep into React development using the React - The
-        Complete Guide 2021 Academind Course. &nbsp;
-        <a
-          href='https://sso.teachable.com/secure/210848/checkout/3148159/react-the-complete-guide'
-          rel='noopener noreferrer'
-          target='_blank'>
-          Purchase the course with the university discount
-        </a>
-        . You will need to sign up with your byui email and use the coupon code{' '}
-        <strong>BYU_React_1</strong>
+        <p>
+          This course will dive deep into React development using the React -
+          The Complete Guide 2021 Academind Course. &nbsp;
+          <a
+            href='https://sso.teachable.com/secure/210848/checkout/3148159/react-the-complete-guide'
+            rel='noopener noreferrer'
+            target='_blank'>
+            Purchase the course with the university discount
+          </a>
+          . You will need to sign up with your byui email and use the coupon
+          code <strong>BYU_React_1</strong>
+        </p>
+        <p>
+          Once you've purchased it, you can always access the course{' '}
+          <a
+            href='https://pro.academind.com/courses/enrolled/1366761'
+            target='_blank'>
+            here
+          </a>
+          .
+        </p>
       </div>
       <p>
         In addition to going through the entire Academind Course individually,
