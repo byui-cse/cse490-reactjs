@@ -62,6 +62,9 @@ function Syllabus() {
         <li>
           <p>Have multiple React projects to add to professional portfolio</p>
         </li>
+        <li>
+          <p>Create a professional portfolio using React</p>
+        </li>
       </ul>
       <h4>Course Communication</h4>
       <p>
@@ -91,7 +94,9 @@ function Syllabus() {
           <p>Weeks 8-10: Team Project 3</p>
         </li>
         <li>
-          <p>Weeks 11-13: Team Project 4</p>
+          <p>
+            Weeks 11-13: Final Project - Create Professional Portfolio Website
+          </p>
         </li>
       </ul>
       <h4>Grading</h4>

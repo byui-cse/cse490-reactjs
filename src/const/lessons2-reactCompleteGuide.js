@@ -311,11 +311,11 @@ const lesson10 = new Lesson(
 const lesson11 = new Lesson(
   'Lesson 11: Final Project Starts',
   '/lesson11',
-  'Welcome to week eleven! There is very little new content in the videos course this week. You will get with your last new team and start working on a project. You should focus almost all of your time on your final project.',
+  'Welcome to week eleven! There is very little new content in the videos course this week. Yu will start working on your final project which will be a professional portfolio built using React. You should focus almost all of your time on your final project.',
   ['Start Final Project', 'React Hooks Recap'],
   readings.slice(27, 28),
-  '',
-  'Join up with 1-2 other developers in the class (anyone of your choosing). This will be your team for three weeks. You will have three weeks to plan, develop, complete and submit a project of your choosing. As your final project, the grade will be weighted more heavily than your other projects. You will be graded based on the amount of code you contribute on a weekly basis, and on how well your project incorporates the concepts taught in this course as a whole.  You will all share a GitHub repository, then publish your React application to a place of your choosing at the conclusion of week 13 (after these three weeks with your team). Choose a project that you are excited about and would feel confident to show to a potential employer.'
+  "You will have three weeks to develop a professional portfolio. This will be a great opportunity to showcase what you have developed throughout this semester, as well as a place to put past and future projects that you work on. Professional portfolios are an incredible way to market yourself in this field. Do some research. There a many web developer portfolios out there to give you ideas as well as React professional portfolio templates that you could use if you wanted to. Make your best effort to have your professional portfolio be perfect and ready to share with employers in three weeks. These portfolios can land you a job interview almost independently and can also make you lose out on job opportunities if it isn't professional, so do your best.",
+  "Look back on all of the projects you've participated in this semester. Discuss ways to market yourself and let employers see these projects. Research job postings with your group and discuss questions you have about them. You will submit a text document with a list of job postings that you are eligible for/interested in, at least 3 questions that your group has about finding jobs, at least 3 React Professional Portfolio templates that you like, and a list of effective ways to market your skills and find jobs."
 );
 
 const lesson12 = new Lesson(
@@ -324,8 +324,8 @@ const lesson12 = new Lesson(
   'Welcome to week twelve! There is very little new content in the videos course this week. You should focus almost all of your time on your final project.',
   ['Week 2 of fourth team project', 'React Summary'],
   readings.slice(28, 29),
-  "Look back on all of the projects you've participated in this semester. Figure out a good way to market yourself and let employers see these projects. There are many professional portfolio templates out there in React that can be implemented with very little effort now that you know what you know. You will submit a text document with a list of job postings that you are eligible for/interested in, at least 3 questions that you have about finding jobs, at least 3 React Professional Portfolio templates that you like, and a plan for how you will market your skills.",
-  'Continue work on your team projects. You will submit a status update in I-learn. Remember, you will complete and publish your projects next week.'
+  'Continue work on your professional portfolio. You will submit a status update in I-learn. Remember, you will complete and publish your projects next week.',
+  ''
 );
 
 const lesson13 = new Lesson(
@@ -334,8 +334,8 @@ const lesson13 = new Lesson(
   'Welcome to week thirteen! Congrats on making it to the end of the course! This week, you will complete, publish and submit your team projects.',
   ['Final Project Submission', 'Course Conclusion'],
   readings.slice(29, 30),
-  '',
-  'Publish your team project. Each of you will submit the relevant assignment in I-learn. You will submit links to the published app, the GitHub repo, and a Youtube video demonstrating the app (limit 2 minutes). You can all use the same video. Your will receive a 0 for your project unless you have submitted these three links.'
+  'Publish your professional portfolio. You will submit links to the published app, the GitHub repo, and a Youtube video demonstrating the app (limit 2 minutes).',
+  ''
 );
 
 Lessons.push(
