@@ -27,7 +27,7 @@ function Syllabus() {
             Purchase the course with the university discount
           </a>
           . You will need to sign up with your byui email and use the coupon
-          code <strong>BYU_React_1</strong>
+          code provided by your instructor.
         </p>
         <p>
           Once you've purchased it, you can always access the course{' '}
