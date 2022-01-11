@@ -46,6 +46,11 @@ function SiteNav() {
                 </LinkContainer>
               ))}
             </NavDropdown>
+            <LinkContainer to={'/projectIdeas'}>
+              <Nav.Link href='#projectIdeas' className='my-item'>
+                Project Ideas
+              </Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

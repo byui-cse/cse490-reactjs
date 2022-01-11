@@ -5,6 +5,7 @@ import Home from '../pages/home';
 import Syllabus from '../pages/syllabus';
 import { Lessons } from '../util/courseSwapper';
 import Lesson from '../pages/lesson';
+import ProjectIdeas from '../pages/projectIdeas';
 
 export default function Nav() {
   return (
@@ -63,6 +64,7 @@ export default function Nav() {
           path='/lesson13/:id?'
           render={(props) => <Lesson lesson={Lessons[12]} num={13} />}
         />
+        <Route path='/projectIdeas' component={ProjectIdeas} />
         <Route path='/' component={Home} />
       </Switch>
     </Router>
