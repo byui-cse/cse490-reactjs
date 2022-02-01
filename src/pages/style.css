@@ -24,7 +24,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.addIdeaButton {
+  float: right;
+  color: #ff3f8e;
+}
+.addIdeaButton:hover {
+  cursor: pointer;
+}
+.fRight {
+  float: right;
+}
 body {
   font-family: 'Open Sans', helvetica, arial, sans-serif;
   background: #fefefe;
