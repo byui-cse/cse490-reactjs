@@ -12,53 +12,47 @@ import './style.css';
 
 function ProjectIdeasPage() {
   const [show, setShow] = useState(false);
-  const [loggedInID, setLoggedInID] = useState();
+  const [loggedInID, setLoggedInID] = useState(false);
   const [formTitle, setFormTitle] = useState();
   const [formDescription, setFormDescription] = useState();
+  const [easybaseData, setEasybaseData] = useState([]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const { db, isUserSignedIn, userID, signOut, Frame, sync, configureFrame } =
-    useEasybase();
+  const { db, isUserSignedIn, userID, signOut } = useEasybase();
   const adminID = 'birchn@byui.edu';
+
+  const mounted = async () => {
+    if (isUserSignedIn()) {
+      setLoggedInID(userID());
+      const ebData = await db('PROJECTS').return().all();
+      setEasybaseData(ebData);
+      if (loggedInID === adminID) {
+        // if admin, check for changes every second
+        setInterval(async function () {
+          const ebData = await db('PROJECTS').return().all();
+          setEasybaseData(ebData);
+        }, 1000);
+      }
+    }
+  };
 
   const handleSignOut = () => {
     signOut();
     setLoggedInID(false);
   };
-  const getData = () => {
-    console.log(`getData ${new Date()}`);
-    if (isUserSignedIn()) {
-      setLoggedInID(userID());
-    }
-    configureFrame({ tableName: 'PROJECTS', limit: 50, offset: 0 });
-    sync();
-  };
+
   useEffect(() => {
-    getData();
-    console.log(`useEffect ${new Date()}`);
+    mounted();
   }, []);
 
-  const onChange = (index, column, newValue) => {
-    Frame(index)[column] = newValue;
-    console.log(`onChange ${new Date()}`);
-    sync();
+  const addProjectToDB = async (project) => {
+    await db('PROJECTS').insert(project).one();
+    return;
   };
 
-  // setInterval(function () {
-  //   if (new Date().getSeconds() % 10 === 0) {
-  //     console.log('check');
-  //     getData();
-  //   }
-  // }, 1000);
-
-  // begin form management and data changes (insert and delete)
-
   const onTitleInput = ({ target: { formTitle } }) => setFormTitle(formTitle);
-  const onDescriptionInput = ({ target: { formDescription } }) =>
-    setFormDescription(formDescription);
-
   const onFormSubmit = (e) => {
     e.preventDefault();
     const project = {
@@ -67,12 +61,12 @@ function ProjectIdeasPage() {
       created: new Date(),
       email: loggedInID,
     };
+    setEasybaseData((easybaseData) => [...easybaseData, project]);
     addProjectToDB(project)
       .then(() => {
         setFormTitle();
         setFormDescription();
         handleClose();
-        sync();
         toast.success('😁 Successfully saved 😁', {
           position: 'top-right',
           autoClose: 3000,
@@ -95,17 +89,20 @@ function ProjectIdeasPage() {
         });
       });
   };
-  const addProjectToDB = async (project) => {
-    await db('PROJECTS').insert(project).one();
-    return;
-  };
+
+  const onDescriptionInput = ({ target: { formDescription } }) =>
+    setFormDescription(formDescription);
+
   const deleteItem = async (key) => {
+    let myArray = easybaseData.filter(function (obj) {
+      return obj._key !== key;
+    });
     await db('PROJECTS')
       .delete()
       .where({ _key: key })
       .one()
       .then(() => {
-        sync();
+        setEasybaseData(myArray);
         toast.success('😁 Successfully deleted item 😁', {
           position: 'top-right',
           autoClose: 3000,
@@ -148,7 +145,7 @@ function ProjectIdeasPage() {
             </div>
           </div>
           <Row xs={1} md={2} lg={3} xl={4} xxl={5} className='g-4'>
-            {Frame()
+            {easybaseData
               .sort((a, b) => Date.parse(b.created) - Date.parse(a.created))
               .map((i, index) => (
                 <Col key={index}>
@@ -156,8 +153,6 @@ function ProjectIdeasPage() {
                     {...i}
                     canDelete={i.email === loggedInID || loggedInID === adminID}
                     deleteHandler={deleteItem}
-                    onChange={onChange}
-                    index={index}
                   />
                 </Col>
               ))}
