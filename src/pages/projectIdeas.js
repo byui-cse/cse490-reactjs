@@ -2,11 +2,12 @@ import React from 'react';
 import Navbar from '../components/navbar/index';
 import { Container } from 'react-bootstrap';
 import CardView from '../components/cardView';
-import { Row, Col, Modal, Button, Form } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { useEasybase, Auth } from 'easybase-react';
 import { useEffect, useState } from 'react';
 import { BsPlusSquare } from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
+import AddModal from '../components/addProjectModal';
 import 'react-toastify/dist/ReactToastify.css';
 import './style.css';
 
@@ -22,6 +23,15 @@ function ProjectIdeasPage() {
 
   const { db, isUserSignedIn, userID, signOut } = useEasybase();
   const adminID = 'birchn@byui.edu';
+  const toastDefaults = {
+    position: 'top-right',
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  };
 
   const mounted = async () => {
     if (isUserSignedIn()) {
@@ -67,26 +77,10 @@ function ProjectIdeasPage() {
         setFormTitle();
         setFormDescription();
         handleClose();
-        toast.success('😁 Successfully saved 😁', {
-          position: 'top-right',
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.success('😁 Successfully saved 😁', toastDefaults);
       })
       .catch((error) => {
-        toast.error('🤨 Failed to save 😩', {
-          position: 'top-right',
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.error('🤨 Failed to save 😩', toastDefaults);
       });
   };
 
@@ -103,26 +97,10 @@ function ProjectIdeasPage() {
       .one()
       .then(() => {
         setEasybaseData(myArray);
-        toast.success('😁 Successfully deleted item 😁', {
-          position: 'top-right',
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.success('😁 Successfully deleted item 😁', toastDefaults);
       })
       .catch(() => {
-        toast.error('🤨 Failed to delete 😩', {
-          position: 'top-right',
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.error('🤨 Failed to delete 😩', toastDefaults);
       });
   };
 
@@ -166,7 +144,16 @@ function ProjectIdeasPage() {
           )}
         </Container>
       </Auth>
-
+      <AddModal
+        show={show}
+        handleClose={handleClose}
+        onFormSubmit={onFormSubmit}
+        onTitleInput={onTitleInput}
+        formTitle={formTitle}
+        onDescriptionInput={onDescriptionInput}
+        formDescription={formDescription}
+        handleClose={handleClose}
+      />
       <ToastContainer
         position='top-right'
         autoClose={3000}
@@ -178,46 +165,6 @@ function ProjectIdeasPage() {
         draggable
         pauseOnHover
       />
-      <Modal show={show} onHide={handleClose}>
-        <Form onSubmit={onFormSubmit}>
-          <Modal.Header closeButton>
-            <Modal.Title>Add New Project Idea</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group className='mb-3' controlId='formTitle'>
-              <Form.Label>Project Title</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Enter title'
-                onChange={onTitleInput}
-                value={formTitle}
-                name='title'
-                required
-              />
-            </Form.Group>
-            <Form.Group className='mb-3' controlId='formDescription'>
-              <Form.Label>Description</Form.Label>
-              <Form.Control
-                as='textarea'
-                type='textarea'
-                placeholder='Project Description'
-                onChange={onDescriptionInput}
-                value={formDescription}
-                name='description'
-                required
-              />
-            </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant='secondary' onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant='primary' type='submit'>
-              Save Project Idea
-            </Button>
-          </Modal.Footer>
-        </Form>
-      </Modal>
     </>
   );
 }
