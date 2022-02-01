@@ -10,15 +10,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './style.css';
 
-/* todo
-split modals into own files
-add auth
-add sockets
-*/
-
 function ProjectIdeasPage() {
   const [show, setShow] = useState(false);
-  const [isLoggedIn, setIsLoggedin] = useState(false);
+  const [loggedInID, setLoggedInID] = useState(false);
   const [formTitle, setFormTitle] = useState();
   const [formDescription, setFormDescription] = useState();
   const [easybaseData, setEasybaseData] = useState([]);
@@ -26,11 +20,20 @@ function ProjectIdeasPage() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const { db } = useEasybase();
+  const { db, isUserSignedIn, userID, signOut } = useEasybase();
+  const adminID = 'birchn@byui.edu';
 
   const mounted = async () => {
+    if (isUserSignedIn()) {
+      setLoggedInID(userID());
+    }
     const ebData = await db('PROJECTS').return().all();
     setEasybaseData(ebData);
+  };
+
+  const handleSignOut = () => {
+    signOut();
+    setLoggedInID(false);
   };
 
   useEffect(() => {
@@ -49,6 +52,7 @@ function ProjectIdeasPage() {
       title: e.target.elements.title.value,
       description: e.target.elements.description.value,
       created: new Date(),
+      email: loggedInID,
     };
     addProjectToDB(project)
       .then(() => {
@@ -68,7 +72,7 @@ function ProjectIdeasPage() {
       .catch((error) => {
         toast.error('🤨 Failed to save 😩', {
           position: 'top-right',
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -81,36 +85,77 @@ function ProjectIdeasPage() {
   const onDescriptionInput = ({ target: { formDescription } }) =>
     setFormDescription(formDescription);
 
+  const deleteItem = async (key) => {
+    await db('PROJECTS')
+      .delete()
+      .where({ _key: key })
+      .one()
+      .then(() => {
+        toast.success('😁 Successfully deleted item 😁', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .catch(() => {
+        toast.error('🤨 Failed to delete 😩', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      });
+  };
+
   return (
     <>
       <Navbar />
-      <Container className='pt-4 pb-4'>
-        <div className='row'>
-          <div className='col-md-12'>
-            <h1>
-              Project Ideas{' '}
-              {isLoggedIn && (
+      <Auth
+        dictionary={{
+          signInHeader: 'Sign in to view project ideas',
+          emailLabel: 'BYU-Idaho email address',
+        }}>
+        {!loggedInID && userID() && setLoggedInID(userID())}
+        <Container className='pt-4 pb-4'>
+          <div className='row'>
+            <div className='col-md-12'>
+              <h1>
+                Project Ideas{' '}
                 <BsPlusSquare className='addIdeaButton' onClick={handleShow} />
-              )}
-              {!isLoggedIn && (
-                <button className='btn btn-primary fRight'>Sign in</button>
-              )}
-            </h1>
+              </h1>
+            </div>
           </div>
-        </div>
-        <Row xs={1} md={2} lg={3} xl={4} xxl={5} className='g-4'>
-          {easybaseData
-            .sort((a, b) => Date.parse(b.created) - Date.parse(a.created))
-            .map((i, index) => (
-              <Col key={index}>
-                <CardView {...i} />
-              </Col>
-            ))}
-        </Row>
-      </Container>
+          <Row xs={1} md={2} lg={3} xl={4} xxl={5} className='g-4'>
+            {easybaseData
+              .sort((a, b) => Date.parse(b.created) - Date.parse(a.created))
+              .map((i, index) => (
+                <Col key={index}>
+                  <CardView
+                    {...i}
+                    canDelete={i.email === loggedInID || loggedInID === adminID}
+                    deleteHandler={deleteItem}
+                  />
+                </Col>
+              ))}
+          </Row>
+          {loggedInID && (
+            <button onClick={handleSignOut} className='btn btn-primary fRight'>
+              Sign Out
+            </button>
+          )}
+        </Container>
+      </Auth>
+
       <ToastContainer
         position='top-right'
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -119,8 +164,6 @@ function ProjectIdeasPage() {
         draggable
         pauseOnHover
       />
-      {/* Same as */}
-      <ToastContainer />
       <Modal show={show} onHide={handleClose}>
         <Form onSubmit={onFormSubmit}>
           <Modal.Header closeButton>

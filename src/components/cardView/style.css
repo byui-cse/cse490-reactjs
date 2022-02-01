@@ -1,0 +1,7 @@
+.trashButton {
+  color: mediumvioletred;
+  float: right;
+}
+.trashButton:hover {
+  cursor: pointer;
+}
