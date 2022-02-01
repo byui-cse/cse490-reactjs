@@ -26,13 +26,25 @@
 }
 .addIdeaButton {
   float: right;
-  color: #ff3f8e;
+  color: mediumvioletred;
 }
 .addIdeaButton:hover {
   cursor: pointer;
 }
 .fRight {
   float: right;
+}
+.btn-outline-primary {
+  color: mediumvioletred !important;
+  background-color: transparent;
+  background-image: none;
+  border-color: mediumvioletred !important;
+}
+
+.btn-outline-primary:hover {
+  color: white !important;
+  background-color: mediumvioletred !important;
+  border-color: mediumvioletred !important;
 }
 body {
   font-family: 'Open Sans', helvetica, arial, sans-serif;

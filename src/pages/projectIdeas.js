@@ -158,7 +158,9 @@ function ProjectIdeasPage() {
               ))}
           </Row>
           {loggedInID && (
-            <button onClick={handleSignOut} className='btn btn-primary fRight'>
+            <button
+              onClick={handleSignOut}
+              className='btn btn-outline-primary fRight'>
               Sign Out
             </button>
           )}
