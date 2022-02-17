@@ -55,7 +55,7 @@ function ProjectIdeasPage() {
 
   useEffect(() => {
     mounted();
-  }, isUserSignedIn); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [isUserSignedIn]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const addProjectToDB = async (project) => {
     await db('PROJECTS').insert(project).one();
@@ -152,7 +152,6 @@ function ProjectIdeasPage() {
         formTitle={formTitle}
         onDescriptionInput={onDescriptionInput}
         formDescription={formDescription}
-        handleClose={handleClose}
       />
       <ToastContainer
         position='top-right'
