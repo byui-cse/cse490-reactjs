@@ -55,7 +55,7 @@ function ProjectIdeasPage() {
 
   useEffect(() => {
     mounted();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, isUserSignedIn); // eslint-disable-line react-hooks/exhaustive-deps
 
   const addProjectToDB = async (project) => {
     await db('PROJECTS').insert(project).one();
