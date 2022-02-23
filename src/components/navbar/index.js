@@ -49,6 +49,7 @@ function SiteNav() {
             <a
               href='https://birch-resources.netlify.app/ideas?course=CSE490'
               target='_blank'
+              rel='noopener noreferrer'
               className='my-item nav-link'>
               Project Ideas
             </a>
