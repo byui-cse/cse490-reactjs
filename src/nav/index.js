@@ -5,7 +5,6 @@ import Home from '../pages/home';
 import Syllabus from '../pages/syllabus';
 import { Lessons } from '../util/courseSwapper';
 import Lesson from '../pages/lesson';
-import ProjectIdeas from '../pages/projectIdeas';
 import { EasybaseProvider } from 'easybase-react';
 import ebconfig from './ebconfig';
 
