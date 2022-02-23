@@ -67,7 +67,6 @@ export default function Nav() {
             path='/lesson13/:id?'
             render={(props) => <Lesson lesson={Lessons[12]} num={13} />}
           />
-          <Route path='/projectIdeas' component={ProjectIdeas} />
           <Route path='/' component={Home} />
         </Switch>
       </Router>

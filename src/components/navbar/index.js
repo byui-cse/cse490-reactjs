@@ -46,11 +46,12 @@ function SiteNav() {
                 </LinkContainer>
               ))}
             </NavDropdown>
-            <LinkContainer to={'/projectIdeas'}>
-              <Nav.Link href='#projectIdeas' className='my-item'>
-                Project Ideas
-              </Nav.Link>
-            </LinkContainer>
+            <a
+              href='https://birch-resources.netlify.app/ideas?course=CSE490'
+              target='_blank'
+              className='my-item nav-link'>
+              Project Ideas
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Container>
