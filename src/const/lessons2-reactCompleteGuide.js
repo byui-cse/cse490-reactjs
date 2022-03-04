@@ -158,7 +158,7 @@ const readings = [
   },
   {
     id: 27,
-    title: 'React & TypeScript',
+    title: 'Optional React & TypeScript',
     duration: 153,
     url: 'https://pro.academind.com/courses/1366761/lectures/31668578',
   },
@@ -289,7 +289,7 @@ const lesson8 = new Lesson(
 );
 
 const lesson9 = new Lesson(
-  'Lesson 9: Next.js, Animations',
+  'Lesson 9: Next.js Introduction',
   '/lesson9',
   'Welcome to week nine! This week, you will continue to learn awesome things in the videos course while you try things out on your own. You will also be deep into development on your team projects that you started last week.',
   ['Week 2 of third team project', 'Next.js', 'Animations'],
@@ -299,11 +299,11 @@ const lesson9 = new Lesson(
 );
 
 const lesson10 = new Lesson(
-  'Lesson 10: Testing & TypeScript',
+  'Lesson 10: Animations',
   '/lesson10',
   'Welcome to week ten! This week, you will continue to learn awesome things in the videos course while you try things out on your own. You will also complete, publish and submit your team projects.',
   ['Testing', 'TypeScript', 'React Hooks', 'Publish and submit team project'],
-  readings.slice(23, 26),
+  readings.slice(23, 24),
   'While you go through the videos course, continue to make frequent and meaningful commits to your personal repository that you created for the videos course. If you choose to make a new repository for different aspects of the videos course, that is perfectly fine.',
   'Publish your team project. Each of you will submit the relevant assignment in I-learn. You will submit links to the published app, the GitHub repo, and a Youtube video demonstrating the app (limit 2 minutes). You can all use the same video. Your will receive a 0 for your project unless you have submitted these three links.'
 );
@@ -313,7 +313,7 @@ const lesson11 = new Lesson(
   '/lesson11',
   'Welcome to week eleven! There is very little new content in the videos course this week. Yu will start working on your final project which will be a professional portfolio built using React. You should focus almost all of your time on your final project.',
   ['Start Final Project', 'React Hooks Recap'],
-  readings.slice(26, 27),
+  readings.slice(24, 25),
   "You will have three weeks to develop a professional portfolio. This will be a great opportunity to showcase what you have developed throughout this semester, as well as a place to put past and future projects that you work on. Professional portfolios are an incredible way to market yourself in this field. Do some research. There a many web developer portfolios out there to give you ideas as well as React professional portfolio templates that you could use if you wanted to. Make your best effort to have your professional portfolio be perfect and ready to share with employers in three weeks. These portfolios can land you a job interview almost independently and can also make you lose out on job opportunities if it isn't professional, so do your best.",
   "Look back on all of the projects you've participated in this semester. Discuss ways to market yourself and let employers see these projects. Research job postings with your group and discuss questions you have about them. You will submit a text document with a list of job postings that you are eligible for/interested in, at least 3 questions that your group has about finding jobs, at least 3 React Professional Portfolio templates that you like, and a list of effective ways to market your skills and find jobs."
 );
@@ -323,7 +323,7 @@ const lesson12 = new Lesson(
   '/lesson12',
   'Welcome to week twelve! There is very little new content in the videos course this week. You should focus almost all of your time on your final project.',
   ['Week 2 of fourth team project', 'React Summary'],
-  readings.slice(27, 28),
+  readings.slice(25, 26),
   'Continue work on your professional portfolio. You will submit a status update in I-learn. Remember, you will complete and publish your projects next week.',
   ''
 );
@@ -333,7 +333,7 @@ const lesson13 = new Lesson(
   '/lesson13',
   'Welcome to week thirteen! Congrats on making it to the end of the course! This week, you will complete, publish and submit your team projects.',
   ['Final Project Submission', 'Course Conclusion'],
-  readings.slice(28, 30),
+  readings.slice(26, 30),
   'Publish your professional portfolio. You will submit links to the published app, the GitHub repo, and a Youtube video demonstrating the app (limit 2 minutes).',
   ''
 );
